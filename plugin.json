@@ -1,0 +1,9 @@
+{
+  "name": "aigine-redact",
+  "author": {
+    "name": "Aigine AB",
+    "url": "https://aigine.se"
+  },
+  "homepage": "https://redact.aigine.se",
+  "repository": "https://github.com/Aigine/aigine-redact"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hesreallyhim/claude-code-json-schema/main/schemas/plugin.schema.json",
+  "name": "aigine-redact",
+  "version": "1.0.3",
+  "description": "EU descriptive AI document redaction for GDPR personal data and confidential information (OSL / trade secrets). 98.30% precision, 93.17% recall, 95.67% F1, flattened irreversible PDF, strict zero retention.",
+  "author": {
+    "name": "Aigine AB",
+    "url": "https://aigine.se"
+  },
+  "homepage": "https://redact.aigine.se",
+  "repository": "https://github.com/Aigine/aigine-redact"
+}

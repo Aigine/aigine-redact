@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "aigine-redact": {
+      "url": "https://redact.aigine.se/mcp"
+    }
+  }
+}

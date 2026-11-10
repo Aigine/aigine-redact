@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "se.aigine/redact",
+  "title": "Aigine Redact",
+  "description": "EU descriptive AI redaction (GDPR & OSL: 98.3% precision, 93.2% recall). Zero retention.",
+  "version": "1.0.3",
+  "websiteUrl": "https://aigine.se/en",
+  "repository": {
+    "url": "https://github.com/Aigine/aigine-redact",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://redact.aigine.se/mcp"
+    }
+  ]
+}
