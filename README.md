@@ -1,4 +1,4 @@
-# Aigine Redact Plugin (Claude, Google Antigravity, Cursor & Autonomous Agents)
+# Aigine Redact Plugin (Claude, Cursor, Google Antigravity & Autonomous Agents)
 
 Sanitize and mask personal data (**GDPR**) and confidential information (**trade secrets & statutory secrecy / OSL 2009:400**) in documents (PDF, Word `.docx`, PowerPoint `.pptx`, and images up to 50 MB) using specialized descriptive encoder AI in the EU — **with zero installation, no API keys required, and strict zero retention**.
 
@@ -22,7 +22,12 @@ Sanitize and mask personal data (**GDPR**) and confidential information (**trade
 ### 2. Claude Code Plugin
 This repository includes `.claude-plugin/plugin.json`, `.mcp.json`, and `skills/aigine-redact/SKILL.md` for direct use with Claude Code.
 
-### 3. Standard MCP Configuration (`mcp.json` / `.mcp.json` / `mcp_config.json`)
+### 3. Cursor Plugin
+This repository includes `.cursor-plugin/plugin.json`, `mcp.json`, and `skills/aigine-redact/SKILL.md` for use as a Cursor plugin. To try it locally, clone the repository into `~/.cursor/plugins/local/aigine-redact` and run **Developer: Reload Window**. The MCP server and the skill load automatically.
+
+Usage: ask the agent to redact or mask a document, for example *"Redact personal data in contract.pdf before we send it to the model"*. The agent uploads the file to the EU server, calls `propose_masking`, and saves the masked PDF to your project. No configuration or API key is needed for the free tier (watermarked PDF, 100 documents/day).
+
+### 4. Standard MCP Configuration (`mcp.json` / `.mcp.json` / `mcp_config.json`)
 For Cursor, Windsurf, VS Code, Google Antigravity, or custom MCP clients:
 ```json
 {

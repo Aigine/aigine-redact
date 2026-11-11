@@ -1,6 +1,6 @@
 {
   "name": "aigine-redact",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "description": "EU encoder AI that masks personal data (GDPR) and confidential information (trade secrets, OSL/FOIA) in PDF, Word, PowerPoint and images. 98.3% precision, zero retention, flattened irreversible PDF.",
   "mcpServers": {
     "aigine-redact": {
