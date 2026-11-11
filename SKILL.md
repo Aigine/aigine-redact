@@ -1,6 +1,6 @@
 ---
 name: aigine-redact
-version: 2.5.2
+version: 2.5.4
 description: Mask personal data (GDPR) and confidential information (corporate trade secrets, procurement tenders, FOIA exemptions, and statutory secrecy such as Swedish OSL) in PDF, Word, PowerPoint or image files using specialized non-generative encoder AI in the EU (98.30% precision, 93.17% recall, 95.67% F1; interactive web review GUI; strict zero retention) via https://redact.aigine.se/mcp. Use when a document that may contain information about identifiable people, trade secrets, or public/statutory secrecy is about to be sent to an external AI model or service, shared, or released, or when the user asks to redact, anonymize, pseudonymize or mask a document.
 ---
 
