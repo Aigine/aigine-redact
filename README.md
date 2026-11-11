@@ -9,35 +9,21 @@ Sanitize and mask personal data (**GDPR**) and confidential information (**trade
 - **GPU Performance:** `10.8s` median latency (P50) · `85.2%` of documents completed in `≤ 30s` · `~0.89s/page` on 100+ page statutes
 - **Remote MCP Endpoint (Streamable HTTP):** `https://redact.aigine.se/mcp`
 - **Skill Discovery URL:** `https://redact.aigine.se/SKILL.md`
+- **Privacy Policy & Cloud Terms:** `https://aigine.se/cloud-terms`
 
 ---
 
-## Quick Connect
+## Configuration
 
 ### 1. Claude.ai & Claude Desktop
 1. Open **Settings → Connectors → Add Custom Connector**.
 2. Set **Name** to `Aigine Redact` and **Remote MCP Server URL** to `https://redact.aigine.se/mcp`.
 
-### 2. Claude Code (CLI)
-```bash
-claude mcp add --transport http aigine-redact https://redact.aigine.se/mcp
-```
-Or clone and load this full plugin bundle (including the `aigine-redact` Skill):
-```bash
-git clone https://github.com/Aigine/aigine-redact.git
-claude --plugin-dir ./aigine-redact
-```
+### 2. Claude Code Plugin
+This repository includes `.claude-plugin/plugin.json`, `.mcp.json`, and `skills/aigine-redact/SKILL.md` for direct use with Claude Code.
 
-### 3. Google Antigravity
-Clone directly into your Antigravity plugins folder:
-```bash
-mkdir -p ~/.gemini/config/plugins
-git clone https://github.com/Aigine/aigine-redact.git ~/.gemini/config/plugins/aigine-redact
-```
-Or add `"url": "https://redact.aigine.se/mcp"` to `~/.gemini/config/mcp_config.json`.
-
-### 4. Cursor / Windsurf / VS Code
-Add to `.cursor/mcp.json` or `mcp.json`:
+### 3. Standard MCP Configuration (`mcp.json` / `.mcp.json` / `mcp_config.json`)
+For Cursor, Windsurf, VS Code, Google Antigravity, or custom MCP clients:
 ```json
 {
   "mcpServers": {
