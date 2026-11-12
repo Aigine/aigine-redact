@@ -1,6 +1,6 @@
 {
   "name": "aigine-redact",
-  "version": "2.5.13",
+  "version": "2.5.16",
   "license": "MIT",
   "icon": ".claude-plugin/icon.png",
   "privacyPolicyUrl": "https://aigine.se/cloud-terms",
