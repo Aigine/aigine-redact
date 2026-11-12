@@ -1,12 +1,12 @@
 ---
 name: aigine-redact
-version: 2.5.11
+version: 2.5.12
 description: Mask personal data (GDPR) and confidential information (corporate trade secrets, procurement tenders, FOIA exemptions, and statutory secrecy such as Swedish OSL) in PDF, Word, PowerPoint or image files using specialized non-generative encoder AI in the EU (98.30% precision, 93.17% recall, 95.67% F1; interactive web review GUI; strict zero retention) via https://redact.aigine.se/mcp. Use when a document that may contain information about identifiable people, trade secrets, or public/statutory secrecy is about to be sent to an external AI model or service, shared, or released, or when the user asks to redact, anonymize, pseudonymize or mask a document.
 ---
 
 # Aigine Redact
 
-Aigine Redact finds and masks personal data and confidential information in documents. It runs specialized (non-generative) encoder classification models on EU GPUs (**10.8s median latency**, **~30-token MCP response**), supports both automated redaction and an interactive browser review GUI, deletes each document immediately after processing (strict zero retention), and returns a flattened, rasterized PDF with irreversible masks burned in.
+Aigine Redact finds and masks personal data and confidential information in documents. It runs specialized (non-generative) encoder classification models on EU GPUs (**10.8s median latency**, **~30-token MCP response**), supports both automated redaction and an interactive browser review GUI, deletes each document after processing and unfinished review sessions after 1 hour (strict zero retention), and returns a flattened, rasterized PDF with irreversible masks burned in.
 
 - **Remote MCP endpoint (Streamable HTTP):** `https://redact.aigine.se/mcp`
 - **Web application:** `https://redact.aigine.se`
@@ -58,9 +58,9 @@ Evaluated against human-annotated GDPR and Swedish OSL ground truth: **98.30% pr
 ### In a chat with a person
 
 1. **In web chats (such as Claude.ai), call `create_upload_link` first.** In clients that support MCP Apps it shows an upload box directly in the chat so the file goes straight to Aigine in the EU and never passes through the model's context. In other clients, share the returned `upload_url`.
-2. **If the user has already attached the file to a web chat,** its contents are already in the conversation. Offer the upload box anyway (or pass `document_base64` if the file is under 45 KB) because it produces a clean, irreversibly flattened PDF.
-3. **Ask two short questions** unless the user has already answered them: which policy (`Privacy`, `Secrecy` or `Privacy and Secrecy`), and whether they want to review and adjust the masks in the web interface (`require_human_review: true`) before the PDF is produced.
-4. **Call `propose_masking`** with the `upload_id`.
+2. **If the user has already attached the file to a web chat,** it can be passed as `document_base64` when it is 45 KB or smaller; larger files go through the upload box.
+3. **When the upload widget is shown,** the user chooses the policy and the mode (direct or review) in the widget, and the widget starts the masking itself. Don't ask for these choices in chat, and don't call `propose_masking` again for that upload. If the widget sends a message asking you to run `propose_masking`, use the policy and mode it states.
+4. **When only `upload_url` is available (no widget),** ask which policy (`Privacy`, `Secrecy` or `Privacy and Secrecy`) and whether they want to review and adjust the masks in the web interface (`require_human_review: true`), unless already stated. Then call `propose_masking` with the `upload_id` after the upload.
 5. **If review was chosen,** share the `review_url`. When the user confirms they have clicked `"Redact"`, call `fetch_reviewed_document` with the `doc_id`.
 
 ### Local agents and autonomous pipelines (Claude Code, Cursor, Antigravity, CLI)
