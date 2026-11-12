@@ -1,6 +1,6 @@
 {
   "name": "aigine-redact",
-  "version": "2.5.7",
+  "version": "2.5.11",
   "description": "Mask personal data (GDPR, incl. Art. 9 special categories) and confidential information (trade secrets, procurement tenders, FOIA exemptions, Swedish OSL) in PDF, Word, PowerPoint and image files before they are shared, released or sent to an AI model. Runs on non-generative encoder AI on EU GPUs with zero retention and returns a flattened PDF with irreversible masks. Optional human review in a web GUI. Remote MCP server, no API key needed for the free tier.",
   "author": {
     "name": "Aigine AB"

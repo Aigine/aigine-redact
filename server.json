@@ -3,7 +3,7 @@
   "name": "se.aigine/redact",
   "title": "Aigine Redact",
   "description": "EU descriptive AI redaction (GDPR & OSL: 98.3% precision, 93.2% recall). Zero retention.",
-  "version": "2.5.7",
+  "version": "2.5.11",
   "websiteUrl": "https://aigine.se/en",
   "repository": {
     "url": "https://github.com/Aigine/aigine-redact",
